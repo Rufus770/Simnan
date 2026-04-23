@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us – Simnan Laser & CNC</title>
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="description" content="Learn about Simnan Laser & CNC – Hubli's modern precision fabrication company specializing in laser cutting and CNC machining." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .founder-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            gap: 0;
+        }
+        .founder-img { height: 100%; min-height: 400px; }
+        .founder-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+        .founder-info { padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+        .founder-quote {
+            font-size: 1.5rem;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+        .founder-info p { color: var(--text-muted); font-size: 0.97rem; line-height: 1.8; margin-bottom: 20px; }
+        .founder-name { font-family: var(--font-head); font-size: 1.1rem; color: var(--white); }
+        .founder-role { font-size: 0.82rem; color: var(--primary); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.1em; }
+
+        .mv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 50px; }
+        .mv-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius);
+            padding: 36px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .mv-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
+            background: var(--gradient-red);
+        }
+        .mv-card h3 { font-size: 1.1rem; color: var(--white); margin-bottom: 14px; padding-left: 16px; }
+        .mv-card p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.8; padding-left: 16px; }
+
+        .timeline { position: relative; padding-left: 28px; }
+        .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--primary), transparent); }
+        .timeline-item { position: relative; margin-bottom: 36px; }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -34px; top: 6px;
+            width: 12px; height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 12px var(--primary);
+        }
+        .timeline-item h4 { font-size: 0.95rem; color: var(--white); margin-bottom: 5px; }
+        .timeline-item span { font-size: 0.75rem; color: var(--primary); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 6px; }
+        .timeline-item p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+
+        @media(max-width:768px) {
+            .founder-card { grid-template-columns: 1fr; }
+            .founder-img { min-height: 280px; }
+            .founder-info { padding: 28px 22px; }
+            .mv-grid { grid-template-columns: 1fr; }
+            .timeline { padding-left: 20px; }
+            .timeline-item::before { left: -26px; }
+        }
+        @media(max-width:480px) {
+            .founder-quote { font-size: 1.2rem; }
+            .mv-card { padding: 24px 18px; }
+            .mv-card h3, .mv-card p { padding-left: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <a href="index.html" class="nav-logo">
+        <img src="Logo.jpeg" alt="Simnan Laser & CNC Logo" />
+        <div class="nav-logo-text">
+            <span class="brand">SIMNAN</span>
+            <span class="tagline">Laser &amp; CNC</span>
+        </div>
+    </a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="machinery.html">Machinery</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn-primary nav-cta" style="padding:9px 20px;font-size:0.72rem;">Get a Quote</a>
+    </div>
+    <div class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+    </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+    <div class="page-hero-content">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>›</span>
+            <span>About Us</span>
+        </div>
+        <div class="section-tag">Our Story</div>
+        <h1>About <span style="color:var(--primary)">Simnan</span> Laser & CNC</h1>
+        <p>A Hubli-based precision fabrication company driven by innovation, accuracy, and a passion for quality craftsmanship.</p>
+    </div>
+</div>
+
+<!-- COMPANY OVERVIEW -->
+<section class="section container">
+    <div class="grid-2">
+        <div class="reveal-left">
+            <div class="section-tag">Who We Are</div>
+            <h2 class="section-title">Modern Fabrication <span>for Modern Needs</span></h2>
+            <div class="laser-line"></div>
+            <p style="color:var(--text-muted);margin-bottom:18px;font-size:0.97rem;">Simnan Laser & CNC is a modern manufacturing and fabrication enterprise specializing in precision cutting, engraving, and customized design solutions using advanced laser and CNC technology. The company is committed to delivering high-quality products with accuracy, efficiency, and innovation.</p>
+            <p style="color:var(--text-muted);margin-bottom:18px;font-size:0.97rem;">With the growing demand for customized and technologically advanced fabrication services, Simnan Laser & CNC has positioned itself as a reliable service provider in the Hubli market, catering to a wide range of customer needs across multiple industries.</p>
+            <p style="color:var(--text-muted);font-size:0.97rem;">Equipped with modern machinery and supported by skilled technicians, we deliver accurate and high-quality results while ensuring timely delivery and competitive pricing.</p>
+        </div>
+        <div class="reveal-right">
+            <div class="img-frame" style="height:460px;">
+                <img src="shop.jpeg" alt="Simnan Laser & CNC Workshop – Hubli" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MISSION & VISION -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="text-center">
+            <div class="section-tag reveal">Our Purpose</div>
+            <h2 class="section-title reveal delay-1">Mission &amp; <span>Vision</span></h2>
+        </div>
+        <div class="mv-grid">
+            <div class="mv-card reveal delay-1">
+                <h3><i class="fas fa-crosshairs" style="color:var(--primary);margin-right:10px;"></i> Our Mission</h3>
+                <p>To provide high-quality, precision-engineered laser and CNC fabrication services that meet the evolving needs of our clients, with a commitment to accuracy, timely delivery, and cost-effective solutions that fuel their success.</p>
+            </div>
+            <div class="mv-card reveal delay-2">
+                <h3><i class="fas fa-eye" style="color:var(--primary);margin-right:10px;"></i> Our Vision</h3>
+                <p>To be the leading laser and CNC fabrication company in Karnataka, recognized for our technological excellence, innovation, and outstanding customer satisfaction — driving the future of precision manufacturing in India.</p>
+            </div>
+            <div class="mv-card reveal delay-3">
+                <h3><i class="fas fa-star" style="color:var(--primary);margin-right:10px;"></i> Our Values</h3>
+                <p>Quality, precision, innovation, and customer focus are the cornerstones of everything we do. We believe every project — big or small — deserves the same level of excellence and attention to detail.</p>
+            </div>
+            <div class="mv-card reveal delay-4">
+                <h3><i class="fas fa-handshake" style="color:var(--primary);margin-right:10px;"></i> Our Promise</h3>
+                <p>Every client receives personalized service, transparent communication, and results that exceed expectations. We don't just deliver products — we build long-term partnerships built on trust and quality.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="section container">
+    <div class="text-center" style="margin-bottom:50px;">
+        <div class="section-tag reveal">The Team</div>
+        <h2 class="section-title reveal delay-1">Meet the <span>Founder</span></h2>
+    </div>
+    <div class="founder-card reveal">
+        <div class="founder-img">
+            <img src="Simnan.jpeg" alt="Founder – Simnan Laser & CNC" />
+        </div>
+        <div class="founder-info">
+            <div class="founder-quote">"</div>
+            <p>At Simnan Laser & CNC, we believe precision is not just a technical requirement — it's a promise we make to every client. Our goal is to combine the best of modern technology with skilled craftsmanship to create products that truly stand out.</p>
+            <p>We started this journey in Hubli with a vision to bring world-class fabrication capabilities to local businesses and individuals. Today, we're proud to serve clients across industries, delivering customized solutions that make a real difference.</p>
+            <div class="founder-name">Simnan</div>
+            <div class="founder-role">Founder &amp; Director, Simnan Laser &amp; CNC</div>
+            <div style="margin-top:24px;">
+                <a href="contact.html" class="btn btn-primary" style="margin-top:8px;"><i class="fas fa-paper-plane"></i> Connect With Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- INDUSTRY CONTEXT -->
+<section class="section section-alt">
+    <div class="grid-2 container">
+        <div class="reveal-left">
+            <div class="section-tag">Industry Overview</div>
+            <h2 class="section-title">The CNC &amp; Laser <span>Cutting Industry</span></h2>
+            <div class="laser-line"></div>
+            <p style="color:var(--text-muted);margin-bottom:16px;font-size:0.95rem;">The CNC and Laser Cutting industry is a vital part of the manufacturing sector, using advanced computer-controlled machines to cut, shape, and design materials with high precision and efficiency.</p>
+            <p style="color:var(--text-muted);margin-bottom:16px;font-size:0.95rem;">This industry plays a crucial role in supporting automobile, construction, interior design, signage, and engineering sectors. CNC machines ensure accuracy and consistency, while laser cutting provides smooth finishing and reduces material wastage.</p>
+            <p style="color:var(--text-muted);font-size:0.95rem;">In India, the industry is growing rapidly due to increasing demand for customized products, automation, and government initiatives like <strong style="color:var(--white)">Make in India</strong>. Cities like Hubli in Karnataka are emerging as industrial hubs for CNC and laser cutting services.</p>
+        </div>
+        <div class="reveal-right">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span>Foundation</span>
+                    <h4>Company Established</h4>
+                    <p>Simnan Laser & CNC was founded in Hubli with a focus on delivering quality fabrication services to local businesses.</p>
+                </div>
+                <div class="timeline-item">
+                    <span>Expansion</span>
+                    <h4>Equipment Upgrade</h4>
+                    <p>Invested in advanced CO₂ laser cutting machines and CNC routers to expand service capabilities and precision.</p>
+                </div>
+                <div class="timeline-item">
+                    <span>Growth</span>
+                    <h4>Market Reach</h4>
+                    <p>Extended services to advertising, interior design, and industrial manufacturing sectors across North Karnataka.</p>
+                </div>
+                <div class="timeline-item">
+                    <span>Today</span>
+                    <h4>500+ Projects Delivered</h4>
+                    <p>Proud to have completed 500+ projects with consistent quality, on-time delivery, and satisfied clients.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section container">
+    <div class="text-center" style="margin-bottom:50px;">
+        <div class="section-tag reveal">Our Advantage</div>
+        <h2 class="section-title reveal delay-1">Why Choose <span>Simnan?</span></h2>
+    </div>
+    <div class="grid-3">
+        <div class="reveal delay-1">
+            <div class="check-item"><div class="check-icon"><i class="fas fa-check"></i></div><div class="check-content"><h4>Advanced Machinery</h4><p>State-of-the-art CNC and laser equipment for consistent, high-precision output.</p></div></div>
+            <div class="check-item"><div class="check-icon"><i class="fas fa-check"></i></div><div class="check-content"><h4>Skilled Technicians</h4><p>Experienced operators who understand both the craft and the technology.</p></div></div>
+        </div>
+        <div class="reveal delay-2">
+            <div class="check-item"><div class="check-icon"><i class="fas fa-check"></i></div><div class="check-content"><h4>Timely Delivery</h4><p>We understand your deadlines and consistently deliver on time, every time.</p></div></div>
+            <div class="check-item"><div class="check-icon"><i class="fas fa-check"></i></div><div class="check-content"><h4>Competitive Pricing</h4><p>Cost-effective solutions without compromising on quality or precision.</p></div></div>
+        </div>
+        <div class="reveal delay-3">
+            <div class="check-item"><div class="check-icon"><i class="fas fa-check"></i></div><div class="check-content"><h4>Custom Solutions</h4><p>Every client gets a tailored approach — from design to final delivery.</p></div></div>
+            <div class="check-item"><div class="check-icon"><i class="fas fa-check"></i></div><div class="check-content"><h4>Wide Material Range</h4><p>Metal, wood, acrylic, MDF, PVC, leather, and more — one shop, endless possibilities.</p></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="section-tag reveal">Work With Us</div>
+    <h2 class="reveal delay-1">Ready to Create Something <span style="color:var(--primary)">Amazing?</span></h2>
+    <p class="reveal delay-2">Contact us today for a free consultation and quote on your project.</p>
+    <div class="cta-buttons reveal delay-3">
+        <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Get a Free Quote</a>
+        <a href="services.html" class="btn btn-outline"><i class="fas fa-th-large"></i> Explore Services</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-grid container">
+        <div class="footer-brand">
+            <img src="Logo.jpeg" alt="Simnan Laser & CNC" />
+            <p>Simnan Laser & CNC — Hubli's trusted precision fabrication company. Laser cutting, CNC routing, engraving and more.</p>
+            <div class="footer-social">
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="machinery.html">Machinery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+                <li><a href="services.html">Laser Cutting</a></li>
+                <li><a href="services.html">CNC Routing</a></li>
+                <li><a href="services.html">Engraving</a></li>
+                <li><a href="services.html">Design Fabrication</a></li>
+                <li><a href="services.html">Custom Signage</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <div class="footer-contact-item"><span class="icon"><i class="fas fa-map-marker-alt"></i></span><span>Hubli, Karnataka, India</span></div>
+            <div class="footer-contact-item"><span class="icon"><i class="fas fa-phone"></i></span><span><a href="tel:+916360613366">+91 63606 13366</a></span></div>
+            <div class="footer-contact-item"><span class="icon"><i class="fas fa-envelope"></i></span><span><a href="mailto:simnan@gmail.com">simnan@gmail.com</a></span></div>
+            <div class="footer-contact-item"><span class="icon"><i class="fas fa-clock"></i></span><span>Mon–Sat: 9:00 AM – 7:00 PM</span></div>
+        </div>
+    </div>
+    <div class="footer-bottom container">
+        <p>© 2025 <span>Simnan Laser & CNC</span>. All rights reserved.</p>
+        <p>Made with <span>♥</span> in Hubli, Karnataka</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

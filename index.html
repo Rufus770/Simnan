@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simnan Laser & CNC – Precision Fabrication, Hubli</title>
+    <meta name="description" content="Simnan Laser & CNC – Hubli's leading precision laser cutting, CNC routing, and engraving service. Metal, wood, acrylic, and more." />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        /* ===== HOME HERO ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: #050505;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('shop.jpeg') center/cover no-repeat;
+            filter: brightness(0.18) saturate(0.6);
+        }
+        #heroCanvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(8,8,8,0.92) 0%, rgba(8,8,8,0.6) 60%, transparent 100%);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 5%;
+            max-width: 780px;
+            padding-top: 80px;
+        }
+        .hero-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .hero-eyebrow-line {
+            width: 40px;
+            height: 2px;
+            background: var(--gradient-red);
+        }
+        .hero-eyebrow span {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--primary);
+        }
+        .hero h1 {
+            font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.08;
+            margin-bottom: 24px;
+        }
+        .hero h1 .highlight {
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0; right: 0;
+            height: 3px;
+            background: var(--gradient-red);
+            border-radius: 2px;
+            animation: lineGrow 1.2s ease 0.8s both;
+        }
+        @keyframes lineGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+        .hero p {
+            font-size: 1.1rem;
+            color: rgba(240,240,240,0.7);
+            max-width: 540px;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+        .hero-scroll {
+            position: absolute;
+            bottom: 36px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-muted);
+            font-size: 0.72rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            z-index: 2;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+        .hero-scroll i { font-size: 1rem; color: var(--primary); }
+
+        /* laser scan line */
+        .scan-line {
+            position: absolute;
+            left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(227,30,36,0.6), transparent);
+            animation: scan 4s linear infinite;
+            z-index: 1;
+        }
+        @keyframes scan { 0%{top:-2px} 100%{top:100%} }
+
+        /* ===== HOME ABOUT PREVIEW ===== */
+        .about-preview-img {
+            height: 480px;
+        }
+        .about-preview-img img {
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--radius);
+        }
+
+        /* ===== SERVICE CARD ICONS ===== */
+        .svc-icon { font-size: 1.6rem; }
+
+        /* ===== INDUSTRIES ===== */
+        .industries-section { padding: 80px 5%; background: var(--dark-2); }
+
+        /* ===== SHOP BANNER ===== */
+        .shop-banner {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            border-radius: var(--radius);
+            margin: 0 5%;
+        }
+        .shop-banner img { width: 100%; height: 100%; object-fit: cover; }
+        .shop-banner-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.3) 100%);
+            display: flex;
+            align-items: center;
+            padding: 50px;
+        }
+        .shop-banner-text h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--white); margin-bottom: 12px; }
+        .shop-banner-text p { color: rgba(255,255,255,0.7); font-size: 1rem; max-width: 380px; margin-bottom: 28px; }
+
+        @media(max-width:700px) {
+            .about-preview-img { height: 260px; }
+            .shop-banner { height: auto; min-height: 280px; margin: 0; border-radius: 0; }
+            .shop-banner-overlay { padding: 28px 20px; align-items: flex-end; }
+            .shop-banner-text p { display: none; }
+            .hero-content { padding-top: 60px; }
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 0.92rem; }
+            .hero-scroll { display: none; }
+        }
+        @media(max-width:420px) {
+            .about-preview-img { height: 220px; }
+            .shop-banner-text h2 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <a href="index.html" class="nav-logo">
+        <img src="Logo.jpeg" alt="Simnan Laser & CNC Logo" />
+        <div class="nav-logo-text">
+            <span class="brand">SIMNAN</span>
+            <span class="tagline">Laser &amp; CNC</span>
+        </div>
+    </a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="machinery.html">Machinery</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn-primary nav-cta" style="padding:9px 20px;font-size:0.72rem;">Get a Quote</a>
+    </div>
+    <div class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero-overlay"></div>
+    <div class="scan-line"></div>
+    <div class="hero-content">
+        <div class="hero-eyebrow">
+            <div class="hero-eyebrow-line"></div>
+            <span>Hubli, Karnataka — Since 2020</span>
+        </div>
+        <h1>Precision <span class="highlight">Laser &amp; CNC</span><br />Fabrication</h1>
+        <p>Cutting-edge laser cutting, CNC routing, and engraving services for metal, wood, acrylic, and more. Accuracy you can measure, quality you can see.</p>
+        <div class="hero-btns">
+            <a href="services.html" class="btn btn-primary"><i class="fas fa-bolt"></i> Our Services</a>
+            <a href="contact.html" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Get a Quote</a>
+        </div>
+    </div>
+    <div class="hero-scroll">
+        <span>Scroll</span>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+    <div class="stats-grid container">
+        <div class="stat-item reveal">
+            <div class="stat-number" data-target="500" data-suffix="+">0+</div>
+            <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-item reveal delay-1">
+            <div class="stat-number" data-target="300" data-suffix="+">0+</div>
+            <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat-item reveal delay-2">
+            <div class="stat-number" data-target="5" data-suffix="+">0+</div>
+            <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item reveal delay-3">
+            <div class="stat-number" data-target="10" data-suffix="+">0+</div>
+            <div class="stat-label">Materials Supported</div>
+        </div>
+    </div>
+</div>
+
+<!-- SERVICES PREVIEW -->
+<section class="section container">
+    <div class="text-center">
+        <div class="section-tag reveal">What We Do</div>
+        <h2 class="section-title reveal delay-1">Our <span>Core Services</span></h2>
+        <p class="section-subtitle reveal delay-2">Advanced fabrication solutions delivered with precision and care for every project.</p>
+    </div>
+    <div class="grid-4">
+        <div class="card reveal delay-1">
+            <div class="card-icon"><span class="svc-icon">🔴</span></div>
+            <h3>Laser Cutting</h3>
+            <p>Ultra-precise cutting on metal, acrylic, wood, and MDF using high-powered CO₂ laser technology.</p>
+        </div>
+        <div class="card reveal delay-2">
+            <div class="card-icon"><span class="svc-icon">⚙️</span></div>
+            <h3>CNC Routing</h3>
+            <p>Computer-controlled routing for complex 2D and 3D shapes with consistent accuracy every time.</p>
+        </div>
+        <div class="card reveal delay-3">
+            <div class="card-icon"><span class="svc-icon">✍️</span></div>
+            <h3>Engraving</h3>
+            <p>Detailed laser engraving on trophies, signage, personalized gifts, and industrial components.</p>
+        </div>
+        <div class="card reveal delay-4">
+            <div class="card-icon"><span class="svc-icon">🎨</span></div>
+            <h3>Design Fabrication</h3>
+            <p>Custom design services combining creativity with precision engineering for unique products.</p>
+        </div>
+    </div>
+    <div class="text-center" style="margin-top:44px;">
+        <a href="services.html" class="btn btn-outline"><i class="fas fa-arrow-right"></i> View All Services</a>
+    </div>
+</section>
+
+<!-- ABOUT PREVIEW -->
+<section class="section section-alt">
+    <div class="grid-2 container">
+        <div class="about-preview-img img-frame reveal-left">
+            <img src="shop.jpeg" alt="Simnan Laser & CNC Shop" />
+        </div>
+        <div class="reveal-right">
+            <div class="section-tag">About Us</div>
+            <h2 class="section-title">Hubli's Premier <span>Fabrication</span> Studio</h2>
+            <div class="laser-line"></div>
+            <p style="color:var(--text-muted);margin-bottom:20px;font-size:0.97rem;">Simnan Laser & CNC is a modern manufacturing enterprise in Hubli, Karnataka, specializing in precision cutting, engraving, and customized design solutions. We combine advanced technology with skilled craftsmanship to deliver excellence.</p>
+            <p style="color:var(--text-muted);margin-bottom:32px;font-size:0.97rem;">From signage and decorative designs to industrial components and custom gifts — we handle every project with the same commitment to quality and timely delivery.</p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                <a href="about.html" class="btn btn-primary">Learn More</a>
+                <a href="machinery.html" class="btn btn-outline">Our Machinery</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SHOP BANNER -->
+<div style="padding:60px 0;">
+    <div class="shop-banner reveal">
+        <img src="shop.jpeg" alt="Simnan Laser & CNC — Hubli" />
+        <div class="shop-banner-overlay">
+            <div class="shop-banner-text">
+                <div class="section-tag">Our Facility</div>
+                <h2>Visit Our Workshop <span style="color:var(--primary)">in Hubli</span></h2>
+                <p>State-of-the-art machinery, skilled operators, and a dedication to perfection — all under one roof.</p>
+                <a href="contact.html" class="btn btn-primary"><i class="fas fa-map-marker-alt"></i> Get Directions</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- INDUSTRIES -->
+<section class="industries-section">
+    <div class="container text-center">
+        <div class="section-tag reveal">Industries We Serve</div>
+        <h2 class="section-title reveal delay-1">Serving <span>Multiple Sectors</span></h2>
+        <div class="industry-tags reveal delay-2" style="justify-content:center;margin-top:32px;">
+            <div class="industry-tag">🏗️ Construction</div>
+            <div class="industry-tag">🎨 Interior Design</div>
+            <div class="industry-tag">📢 Advertising & Signage</div>
+            <div class="industry-tag">🏭 Manufacturing</div>
+            <div class="industry-tag">🚗 Automobile</div>
+            <div class="industry-tag">🎁 Personalized Gifts</div>
+            <div class="industry-tag">🏢 Corporate</div>
+            <div class="industry-tag">🛠️ Engineering</div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="section-tag reveal">Ready to Start?</div>
+    <h2 class="reveal delay-1">Let's Build Something <span style="color:var(--primary)">Extraordinary</span></h2>
+    <p class="reveal delay-2">Send us your design or idea and we'll turn it into a precision-crafted reality.</p>
+    <div class="cta-buttons reveal delay-3">
+        <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Request a Quote</a>
+        <a href="services.html" class="btn btn-outline"><i class="fas fa-th-large"></i> Browse Services</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-grid container">
+        <div class="footer-brand">
+            <img src="Logo.jpeg" alt="Simnan Laser & CNC" />
+            <p>Simnan Laser & CNC — Hubli's trusted precision fabrication company. Laser cutting, CNC routing, engraving and more.</p>
+            <div class="footer-social">
+                <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="machinery.html">Machinery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+                <li><a href="services.html">Laser Cutting</a></li>
+                <li><a href="services.html">CNC Routing</a></li>
+                <li><a href="services.html">Engraving</a></li>
+                <li><a href="services.html">Design Fabrication</a></li>
+                <li><a href="services.html">Custom Signage</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <div class="footer-contact-item">
+                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                <span>Hubli, Karnataka, India</span>
+            </div>
+            <div class="footer-contact-item">
+                <span class="icon"><i class="fas fa-phone"></i></span>
+                <span><a href="tel:+916360613366">+91 63606 13366</a></span>
+            </div>
+            <div class="footer-contact-item">
+                <span class="icon"><i class="fas fa-envelope"></i></span>
+                <span><a href="mailto:simnan@gmail.com">simnan@gmail.com</a></span>
+            </div>
+            <div class="footer-contact-item">
+                <span class="icon"><i class="fas fa-clock"></i></span>
+                <span>Mon–Sat: 9:00 AM – 7:00 PM</span>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom container">
+        <p>© 2025 <span>Simnan Laser & CNC</span>. All rights reserved.</p>
+        <p>Made with <span>♥</span> in Hubli, Karnataka</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

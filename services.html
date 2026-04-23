@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services – Simnan Laser & CNC</title>
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="description" content="Laser cutting, CNC routing, engraving, and design fabrication services in Hubli. Metal, wood, acrylic, MDF, and more." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .service-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding: 70px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .service-detail:last-of-type { border-bottom: none; }
+        .service-detail.reverse .service-img-col { order: 2; }
+        .service-detail.reverse .service-text-col { order: 1; }
+        .service-img-col { height: 400px; }
+        .service-img-col .img-frame { height: 100%; }
+        .service-img-col .img-frame img { height: 100%; object-fit: cover; }
+        .service-big-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .service-features { margin: 20px 0; }
+        .service-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+        .service-feature i { color: var(--primary); font-size: 0.78rem; }
+
+        /* Service placeholder image */
+        .svc-placeholder {
+            background: var(--dark-3);
+            border-radius: var(--radius);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            border: 1px solid var(--card-border);
+            flex-direction: column;
+            gap: 12px;
+        }
+        .svc-placeholder span { font-family: var(--font-head); font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.1em; }
+
+        .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        @media(max-width:900px) {
+            .service-detail { grid-template-columns: 1fr; gap: 28px; padding: 50px 0; }
+            .service-detail.reverse .service-img-col,
+            .service-detail.reverse .service-text-col { order: unset; }
+            .service-img-col { height: 240px; }
+            .process-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media(max-width:600px) {
+            .process-grid { grid-template-columns: 1fr; }
+            .service-detail { padding: 36px 0; gap: 22px; }
+            .service-img-col { height: 200px; }
+            .service-big-icon { font-size: 2.5rem; margin-bottom: 14px; }
+            .service-feature { font-size: 0.82rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <a href="index.html" class="nav-logo">
+        <img src="Logo.jpeg" alt="Simnan Laser & CNC Logo" />
+        <div class="nav-logo-text">
+            <span class="brand">SIMNAN</span>
+            <span class="tagline">Laser &amp; CNC</span>
+        </div>
+    </a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="machinery.html">Machinery</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn-primary nav-cta" style="padding:9px 20px;font-size:0.72rem;">Get a Quote</a>
+    </div>
+    <div class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+    </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+    <div class="page-hero-content">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>›</span>
+            <span>Services</span>
+        </div>
+        <div class="section-tag">What We Offer</div>
+        <h1>Our <span style="color:var(--primary)">Services</span></h1>
+        <p>Comprehensive laser and CNC fabrication services — from precision cutting to custom engraving — for every industry and need.</p>
+    </div>
+</div>
+
+<!-- SERVICES OVERVIEW CARDS -->
+<section class="section container">
+    <div class="text-center" style="margin-bottom:50px;">
+        <div class="section-tag reveal">Quick Overview</div>
+        <h2 class="section-title reveal delay-1">Everything We <span>Do Best</span></h2>
+    </div>
+    <div class="grid-4">
+        <div class="card reveal delay-1">
+            <div class="card-icon" style="font-size:1.4rem;">🔴</div>
+            <h3>Laser Cutting</h3>
+            <p>High-precision CO₂ laser cutting for metal sheets, acrylic panels, wood boards, and MDF with clean edges.</p>
+        </div>
+        <div class="card reveal delay-2">
+            <div class="card-icon" style="font-size:1.4rem;">⚙️</div>
+            <h3>CNC Routing</h3>
+            <p>Computer-controlled routing for 2D and 3D shapes on wood, MDF, acrylic, and composite materials.</p>
+        </div>
+        <div class="card reveal delay-3">
+            <div class="card-icon" style="font-size:1.4rem;">✍️</div>
+            <h3>Laser Engraving</h3>
+            <p>Detailed engraving on awards, trophies, signage, gifts, phone cases, and industrial parts.</p>
+        </div>
+        <div class="card reveal delay-4">
+            <div class="card-icon" style="font-size:1.4rem;">🎨</div>
+            <h3>Design Fabrication</h3>
+            <p>Full-service design-to-product pipeline with custom CAD design, prototyping, and finished fabrication.</p>
+        </div>
+        <div class="card reveal delay-1">
+            <div class="card-icon" style="font-size:1.4rem;">🪧</div>
+            <h3>Custom Signage</h3>
+            <p>Eye-catching business signs, 3D letters, shop boards, and branding panels for all business types.</p>
+        </div>
+        <div class="card reveal delay-2">
+            <div class="card-icon" style="font-size:1.4rem;">🏠</div>
+            <h3>Interior Panels</h3>
+            <p>Decorative wall panels, jali work, and room dividers for modern interior design applications.</p>
+        </div>
+        <div class="card reveal delay-3">
+            <div class="card-icon" style="font-size:1.4rem;">🎁</div>
+            <h3>Personalized Gifts</h3>
+            <p>Custom gifts with laser-engraved names, photos, and messages for any occasion or corporate gifting.</p>
+        </div>
+        <div class="card reveal delay-4">
+            <div class="card-icon" style="font-size:1.4rem;">🏭</div>
+            <h3>Industrial Components</h3>
+            <p>Precision-cut industrial parts, brackets, gaskets, and prototypes for engineering applications.</p>
+        </div>
+    </div>
+</section>
+
+<!-- DETAILED SERVICES -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="text-center" style="margin-bottom:20px;">
+            <div class="section-tag reveal">In Detail</div>
+            <h2 class="section-title reveal delay-1">Service <span>Deep Dive</span></h2>
+        </div>
+
+        <!-- Laser Cutting -->
+        <div class="service-detail">
+            <div class="service-text-col reveal-left">
+                <span class="service-big-icon">🔴</span>
+                <div class="section-tag">Laser Cutting</div>
+                <h2 class="section-title" style="font-size:clamp(1.5rem,2.5vw,2rem);">High-Precision <span>Laser Cutting</span></h2>
+                <div class="laser-line"></div>
+                <p style="color:var(--text-muted);margin-bottom:16px;">Our CO₂ laser cutting service delivers exceptionally clean, precise cuts with smooth edges and minimal material wastage. Ideal for intricate designs that require exacting tolerances.</p>
+                <div class="service-features">
+                    <div class="service-feature"><i class="fas fa-check-circle"></i> Sheet metal, stainless steel, mild steel</div>
+                    <div class="service-feature"><i class="fas fa-check-circle"></i> Acrylic – clear, coloured, mirror finish</div>
+                    <div class="service-feature"><i class="fas fa-check-circle"></i> Wood, plywood, MDF, bamboo</div>
+                    <div class="service-feature"><i class="fas fa-check-circle"></i> Leather, fabric, and cardboard</div>
+                    <div class="service-feature"><i class="fas fa-check-circle"></i> Minimal heat-affected zone (HAZ)</div>
+                    <div class="service-feature"><i class="fas fa-check-circle"></i> Accepts DXF, AI, CDR file formats</div>
+                </div>
+                <a href="contact.html" class="btn btn-primary"><i class="fas fa-bolt"></i> Request Laser Cut</a>
+            </div>
+            <div class="service-img-col reveal-right">
+                <div class="img-frame">
+                    <img src="machine1.jpeg" alt="Laser Cutting Machine" />
+                </div>
+            </div>
+        </div>
+
+        <!-- CNC Routing -->
+        <div class="service-detail reverse">
+            <div class="service-img-col reveal-left">
+                <div class="img-frame">
+                    <img src="machine2.jpeg" alt="CNC Router Machine" />
+                </div>
+            </div>
+            <div class="service-text-col reveal-right">
+                <span class="service-big-icon">⚙️</span>
+                <div class="section-tag">CNC Routing</div>
+                <h2 class="section-title" style="font-size:clamp(1.5rem,2.5vw,2rem);">Precision <span>CNC Routing</span></h2>
+                <div class="laser-line"></div>
+                <p style="color:var(--text-muted);margin-bottom:16px;">Our CNC Router handles complex 2D and 3D profiles with remarkable consistency. Perfect for furniture making, decorative panels, signage, and industrial prototypes.</p>
+                <div class="service-features">
+                    <div class="service-feature"><i class="fas fa-check-circle"></i> MDF, plywood, hardwood, softwood</div>
+                    <div class="service-feature"><i class="fas fa-check-circle"></i> PVC, foam board, composite panels</div>
+                    <div class="service-feature"><i class="fas fa-check-circle"></i> Acrylic and non-ferrous metals</div>
+                    <div class="service-feature"><i class="fas fa-check-circle"></i> 2D profiling and 3D relief carving</div>
+                    <div class="service-feature"><i class="fas fa-check-circle"></i> Custom toolpaths for any geometry</div>
+                    <div class="service-feature"><i class="fas fa-check-circle"></i> Large bed capacity — 1300×2500 mm</div>
+                </div>
+                <a href="contact.html" class="btn btn-primary"><i class="fas fa-cogs"></i> Request CNC Work</a>
+            </div>
+        </div>
+
+        <!-- Engraving -->
+        <div class="service-detail">
+            <div class="service-text-col reveal-left">
+                <span class="service-big-icon">✍️</span>
+                <div class="section-tag">Engraving</div>
+                <h2 class="section-title" style="font-size:clamp(1.5rem,2.5vw,2rem);">Detailed <span>Laser Engraving</span></h2>
+                <div class="laser-line"></div>
+                <p style="color:var(--text-muted);margin-bottom:16px;">Transform any surface into a canvas. Our laser engraving service creates permanent, detailed markings on a wide variety of surfaces — perfect for branding, awards, and personalization.</p>
+                <div class="service-features">
+                    <div class="service-feature"><i class="fas fa-check-circle"></i> Trophies, awards, and plaques</div>
+                    <div class="service-feature"><i class="fas fa-check-circle"></i> Business cards and keychains</div>
+                    <div class="service-feature"><i class="fas fa-check-circle"></i> Wooden photo frames and gifts</div>
+                    <div class="service-feature"><i class="fas fa-check-circle"></i> Corporate branding items</div>
+                    <div class="service-feature"><i class="fas fa-check-circle"></i> Industrial part marking</div>
+                    <div class="service-feature"><i class="fas fa-check-circle"></i> Supports logos, text, and photos</div>
+                </div>
+                <a href="contact.html" class="btn btn-primary"><i class="fas fa-pen-fancy"></i> Request Engraving</a>
+            </div>
+            <div class="service-img-col reveal-right">
+                <div class="img-frame">
+                    <img src="machine1.jpeg" alt="Laser Engraving Machine" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Design Fabrication -->
+        <div class="service-detail reverse">
+            <div class="service-img-col reveal-left">
+                <div class="img-frame">
+                    <img src="machine2.jpeg" alt="CNC Design Fabrication Machine" />
+                </div>
+            </div>
+            <div class="service-text-col reveal-right">
+                <span class="service-big-icon">🎨</span>
+                <div class="section-tag">Design Fabrication</div>
+                <h2 class="section-title" style="font-size:clamp(1.5rem,2.5vw,2rem);">Custom <span>Design &amp; Fabrication</span></h2>
+                <div class="laser-line"></div>
+                <p style="color:var(--text-muted);margin-bottom:16px;">From concept to finished product — our design fabrication service handles the entire process. We work closely with you to bring your ideas to life with precision and creativity.</p>
+                <div class="service-features">
+                    <div class="service-feature"><i class="fas fa-check-circle"></i> CAD/vector design assistance</div>
+                    <div class="service-feature"><i class="fas fa-check-circle"></i> Prototype development</div>
+                    <div class="service-feature"><i class="fas fa-check-circle"></i> Decorative panels and jali work</div>
+                    <div class="service-feature"><i class="fas fa-check-circle"></i> Architectural models</div>
+                    <div class="service-feature"><i class="fas fa-check-circle"></i> Retail and exhibition displays</div>
+                    <div class="service-feature"><i class="fas fa-check-circle"></i> Batch production capability</div>
+                </div>
+                <a href="contact.html" class="btn btn-primary"><i class="fas fa-drafting-compass"></i> Start Your Project</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MATERIALS -->
+<section class="section container">
+    <div class="grid-2">
+        <div class="reveal-left">
+            <div class="section-tag">Materials</div>
+            <h2 class="section-title">What We <span>Work With</span></h2>
+            <div class="laser-line"></div>
+            <p style="color:var(--text-muted);margin-bottom:28px;font-size:0.97rem;">We work with a comprehensive range of materials to meet diverse client needs. Our machines are calibrated to handle each material with the right parameters for optimal results.</p>
+            <div class="materials-row">
+                <div class="material-chip">🔩 Mild Steel</div>
+                <div class="material-chip">⚡ Stainless Steel</div>
+                <div class="material-chip">🪟 Acrylic</div>
+                <div class="material-chip">🌲 Wood & Plywood</div>
+                <div class="material-chip">📋 MDF</div>
+                <div class="material-chip">🧱 Foam Board</div>
+                <div class="material-chip">📦 PVC</div>
+                <div class="material-chip">🧴 Leather</div>
+                <div class="material-chip">📄 Cardboard</div>
+                <div class="material-chip">🪵 Bamboo</div>
+            </div>
+        </div>
+        <div class="reveal-right">
+            <div class="section-tag">Process</div>
+            <h2 class="section-title">How It <span>Works</span></h2>
+            <div class="laser-line"></div>
+            <div style="display:flex;flex-direction:column;gap:14px;margin-top:10px;">
+                <div class="process-step">
+                    <div class="step-num">01</div>
+                    <div class="step-content">
+                        <h4>Share Your Design</h4>
+                        <p>Send us your DXF, AI, CDR, or PDF file — or describe your idea and we'll design it for you.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">02</div>
+                    <div class="step-content">
+                        <h4>Get a Quote</h4>
+                        <p>We review your project and provide a transparent cost estimate with material and time breakdown.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">03</div>
+                    <div class="step-content">
+                        <h4>Production Begins</h4>
+                        <p>Once approved, our machines get to work — cutting, engraving, or routing with precision.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">04</div>
+                    <div class="step-content">
+                        <h4>Delivery & QC</h4>
+                        <p>Products are quality-checked and delivered or dispatched to you on time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- INDUSTRIES SERVED -->
+<section class="section section-alt">
+    <div class="container text-center">
+        <div class="section-tag reveal">Sectors</div>
+        <h2 class="section-title reveal delay-1">Industries We <span>Serve</span></h2>
+        <p class="section-subtitle reveal delay-2">Our services span a wide range of industries, providing customized solutions for each sector's unique demands.</p>
+        <div class="grid-4" style="margin-top:20px;">
+            <div class="card reveal delay-1"><div class="card-icon">🏢</div><h3>Advertising</h3><p>Signage, display boards, letter boards, and branded installations.</p></div>
+            <div class="card reveal delay-2"><div class="card-icon">🏠</div><h3>Interior Design</h3><p>Decorative panels, room dividers, wall art, and furniture accents.</p></div>
+            <div class="card reveal delay-3"><div class="card-icon">🏗️</div><h3>Construction</h3><p>Architectural models, custom metalwork, and building components.</p></div>
+            <div class="card reveal delay-4"><div class="card-icon">🏭</div><h3>Manufacturing</h3><p>Industrial parts, brackets, gaskets, and precision prototypes.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="section-tag reveal">Start Today</div>
+    <h2 class="reveal delay-1">Your Project Deserves <span style="color:var(--primary)">Precision</span></h2>
+    <p class="reveal delay-2">Contact us now and let's discuss how we can bring your vision to life.</p>
+    <div class="cta-buttons reveal delay-3">
+        <a href="contact.html" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Request a Quote</a>
+        <a href="machinery.html" class="btn btn-outline"><i class="fas fa-cogs"></i> See Our Machinery</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-grid container">
+        <div class="footer-brand">
+            <img src="Logo.jpeg" alt="Simnan Laser & CNC" />
+            <p>Simnan Laser & CNC — Hubli's trusted precision fabrication company. Laser cutting, CNC routing, engraving and more.</p>
+            <div class="footer-social">
+                <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="machinery.html">Machinery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+                <li><a href="services.html">Laser Cutting</a></li>
+                <li><a href="services.html">CNC Routing</a></li>
+                <li><a href="services.html">Engraving</a></li>
+                <li><a href="services.html">Design Fabrication</a></li>
+                <li><a href="services.html">Custom Signage</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <div class="footer-contact-item"><span class="icon"><i class="fas fa-map-marker-alt"></i></span><span>Hubli, Karnataka, India</span></div>
+            <div class="footer-contact-item"><span class="icon"><i class="fas fa-phone"></i></span><span><a href="tel:+916360613366">+91 63606 13366</a></span></div>
+            <div class="footer-contact-item"><span class="icon"><i class="fas fa-envelope"></i></span><span><a href="mailto:simnan@gmail.com">simnan@gmail.com</a></span></div>
+            <div class="footer-contact-item"><span class="icon"><i class="fas fa-clock"></i></span><span>Mon–Sat: 9:00 AM – 7:00 PM</span></div>
+        </div>
+    </div>
+    <div class="footer-bottom container">
+        <p>© 2025 <span>Simnan Laser & CNC</span>. All rights reserved.</p>
+        <p>Made with <span>♥</span> in Hubli, Karnataka</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
