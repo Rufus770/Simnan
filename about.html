@@ -17,12 +17,9 @@
             border: 1px solid var(--card-border);
             border-radius: var(--radius);
             overflow: hidden;
-            display: grid;
-            grid-template-columns: 340px 1fr;
-            gap: 0;
+            max-width: 800px;
+            margin: 0 auto;
         }
-        .founder-img { height: 100%; min-height: 400px; }
-        .founder-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
         .founder-info { padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
         .founder-quote {
             font-size: 1.5rem;
@@ -176,10 +173,7 @@
         <h2 class="section-title reveal delay-1">Meet the <span>Founder</span></h2>
     </div>
     <div class="founder-card reveal">
-        <div class="founder-img">
-            <img src="Simnan.jpeg" alt="Founder – Simnan Laser & CNC" />
-        </div>
-        <div class="founder-info">
+        <div class="founder-info" style="border-radius:var(--radius);">
             <div class="founder-quote">"</div>
             <p>At Simnan Laser & CNC, we believe precision is not just a technical requirement — it's a promise we make to every client. Our goal is to combine the best of modern technology with skilled craftsmanship to create products that truly stand out.</p>
             <p>We started this journey in Hubli with a vision to bring world-class fabrication capabilities to local businesses and individuals. Today, we're proud to serve clients across industries, delivering customized solutions that make a real difference.</p>
